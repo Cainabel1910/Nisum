@@ -1,0 +1,297 @@
+{
+	"info": {
+		"_postman_id": "55ad6ee8-7def-4fd2-8f56-5c6da5de28f2",
+		"name": "Usuario Nisum",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9594876"
+	},
+	"item": [
+		{
+			"name": "Get Usuario",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJiaWxvIiwiaWF0IjoxNjk5ODA0OTc5LCJleHAiOjE2OTk4MDY0MTl9.pZOsGJspsUnFiEwUlWycYRd7C8rOfd5P-RB5t0jDtHo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9090/1",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Curso",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8002",
+					"host": [
+						"localhost"
+					],
+					"port": "8002"
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Save Usuario",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"Cesar Lozada\",\r\n    \"email\": \"lozada@mail.com\",\r\n    \"password\": \"1a_345L4\",\r\n    \"telefonoList\": [\r\n        {\r\n            \"numero\": \"1234567\",\r\n            \"codigoCiudad\": \"1\",\r\n            \"codigoPais\": \"57\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9090",
+					"host": [
+						"localhost"
+					],
+					"port": "9090"
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"bilo\",\r\n    \"password\": \"$2a$10$TQnLdMUOjaNPnOUybw0SKuYk.A3z7cf/S9ejXm.TRTuAMpQjLKAFC\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9090/auth/login",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"bilo\",\r\n    \"email\": \"lozada@mail.com\",\r\n    \"password\": \"1a_345L4\",\r\n    \"phones\": [\r\n        {\r\n            \"number\": \"1234567\",\r\n            \"cityCode\": \"1\",\r\n            \"countryCode\": \"57\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9090/auth/register",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Usuario",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJiaWxvIiwiaWF0IjoxNjk5ODA0OTc5LCJleHAiOjE2OTk4MDY0MTl9.pZOsGJspsUnFiEwUlWycYRd7C8rOfd5P-RB5t0jDtHo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 1,\r\n    \"username\": \"bilo\",\r\n    \"email\": \"lozada@mail.com\",\r\n    \"password\": \"$2a$10$TQnLdMUOjaNPnOUybw0SKuYk.A3z7cf/S9ejXm.TRTuAMpQjLKAFC\",\r\n    \"phones\": [\r\n        {\r\n            \"id\": 1,\r\n            \"number\": \"1234567\",\r\n            \"cityCode\": \"1\",\r\n            \"countryCode\": \"57\"\r\n        },\r\n        {\r\n            \"id\": 2,\r\n            \"number\": \"67890\",\r\n            \"cityCode\": \"1\",\r\n            \"countryCode\": \"51\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9090/1",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Inactivar",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJiaWxvIiwiaWF0IjoxNjk5ODA0OTc5LCJleHAiOjE2OTk4MDY0MTl9.pZOsGJspsUnFiEwUlWycYRd7C8rOfd5P-RB5t0jDtHo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9090/inactivar/1",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"inactivar",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Activar",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJiaWxvIiwiaWF0IjoxNjk5ODA0OTc5LCJleHAiOjE2OTk4MDY0MTl9.pZOsGJspsUnFiEwUlWycYRd7C8rOfd5P-RB5t0jDtHo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9090/inactivar/1",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"inactivar",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Usuario",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9090/2",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
